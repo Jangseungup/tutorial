@@ -5,7 +5,10 @@ import { ContactsService } from './contacts.service';
 @Controller('contacts')
 export class ContactsController {
     constructor(private readonly contactsService: ContactsService) {}
-    
+    @Get()
+    async getAll(): Promise<Contact[]> {
+        return await this.contactsService.getAll();
+    }
 
     @Get('/:id')
     async get(@Param('id') id): Promise<Contact> {
