@@ -6,9 +6,7 @@ import { PrismaService } from './prisma.service';
 export class ContactsService {
     constructor(private prisma: PrismaService) {}
 
-    async getAll(): Promise<Contact[]> {
-        return await this.prisma.contact.findMany();
-    }
+    
 
     async get(id : number): Promise<Contact> {
         return await this.prisma.contact.findUnique({where: {id}});
