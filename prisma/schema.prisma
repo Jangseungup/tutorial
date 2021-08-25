@@ -8,12 +8,11 @@ datasource db {
 
 generator client {
   provider = "prisma-client-js"
-  binaryTargets = ["native"]
 }
 
 model Contact {
   id          Int     @default(autoincrement()) @id
-  email       String  @unique
+  email       String 
   name        String
   age         Int
   phoneNumber String
